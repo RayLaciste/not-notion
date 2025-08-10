@@ -1,9 +1,16 @@
 import { Button } from "@/components/ui/button";
+import { Header } from "./_components/header";
+import { Heroes } from "./_components/heroes";
 
-export default function Home() {
+const LandingPage = () => {
   return (
-    <div>
-      <Button className="bg-emerald-500 text-white">Click Me</Button>
+    <div className="min-h-full flex flex-col">
+      <div className="flex flex-col items-center justify-center md:justify-start text-center gap-y-8 flex-1 px-6 pb-10">
+        <Header />
+        <Heroes />
+      </div>
     </div>
   );
 }
+
+export default LandingPage;
