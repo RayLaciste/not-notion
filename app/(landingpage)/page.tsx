@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Header } from "./_components/header";
 import { Heroes } from "./_components/heroes";
+import { Footer } from "./_components/footer";
 
 const LandingPage = () => {
   return (
@@ -9,6 +10,7 @@ const LandingPage = () => {
         <Header />
         <Heroes />
       </div>
+      <Footer />
     </div>
   );
 }
