@@ -17,6 +17,9 @@ export const Logo = () => {
         width="40"
         alt="logo"
       />
+      <p className={cn("font-semibold", font.className)}>
+        Not-Notion
+      </p>
     </div>
   )
 }
