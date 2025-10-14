@@ -1,11 +1,11 @@
-import Image from "next/image"
-import { Poppins } from "next/font/google"
+import Image from "next/image";
+import { Poppins } from "next/font/google";
 
-import { cn } from "@/lib/utils"
+import { cn } from "@/lib/utils";
 
 const font = Poppins({
   subsets: ["latin"],
-  weight: ["400", "600"]
+  weight: ["400", "600"],
 });
 
 export const Logo = () => {
@@ -16,10 +16,16 @@ export const Logo = () => {
         height="40"
         width="40"
         alt="logo"
+        className="dark:hidden"
       />
-      <p className={cn("font-semibold", font.className)}>
-        Not-Notion
-      </p>
+      <Image
+        src="/logo-dark.svg"
+        height="40"
+        width="40"
+        alt="logo"
+        className="hidden dark:block"
+      />
+      <p className={cn("font-semibold", font.className)}>Not-Notion</p>
     </div>
-  )
-}
+  );
+};
