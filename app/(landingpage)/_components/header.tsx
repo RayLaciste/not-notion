@@ -3,6 +3,8 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
+import Link from "next/link";
+
 export const Header = () => {
   return (
     <div className="max-w-3xl space-y-4">
@@ -14,7 +16,7 @@ export const Header = () => {
         But it's trying
       </h3>
       <Button>
-        Use Not-Notion
+        <Link href="/documents">Enter Not-Notion</Link>
         <ArrowRight className="h-4 w-4 ml-2" />
       </Button>
     </div>
