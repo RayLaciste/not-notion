@@ -25,8 +25,12 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { TrashBox } from "./trash-box";
+import { useSearch } from "@/hooks/use-search";
+import { useSettings } from "@/hooks/use-settings";
 
 export const Navigation = () => {
+  const settings = useSettings();
+  const search = useSearch();
   const pathName = usePathname();
   const isMobile = useMediaQuery("(max-width: 768px)");
   const create = useMutation(api.documents.create);
@@ -142,8 +146,8 @@ export const Navigation = () => {
         </div>
         <div>
           <UserItem />
-          <Item label="Search" icon={Search} isSearch onClick={() => {}} />
-          <Item label="Settings" icon={Settings} onClick={() => {}} />
+          <Item label="Search" icon={Search} isSearch onClick={search.onOpen} />
+          <Item label="Settings" icon={Settings} onClick={settings.onOpen} />
           <Item
             onClick={() => {
               handleCreate();
@@ -151,22 +155,22 @@ export const Navigation = () => {
             label="New page"
             icon={PlusCircle}
           />
-          <Popover>
-            <PopoverTrigger className="w-full mt-4">
-              <Item label="Trash" icon={Trash} />
-            </PopoverTrigger>
-            <PopoverContent
-              className="p-0 w-72"
-              side={isMobile ? "bottom" : "right"}
-            >
-              <TrashBox />
-            </PopoverContent>
-          </Popover>
         </div>
         <div className="mt-4">
           <DocumentList />
           <Item onClick={handleCreate} icon={Plus} label="Add a page" />
         </div>
+        <Popover>
+          <PopoverTrigger className="w-full mt-4">
+            <Item label="Trash" icon={Trash} />
+          </PopoverTrigger>
+          <PopoverContent
+            className="p-0 w-72"
+            side={isMobile ? "bottom" : "right"}
+          >
+            <TrashBox />
+          </PopoverContent>
+        </Popover>
         <div
           onMouseDown={handleMouseDown}
           onClick={resetWidth}
