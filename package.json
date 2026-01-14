@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.51.0",
+    "@edgestore/react": "^0.6.0",
+    "@edgestore/server": "^0.6.0",
     "@radix-ui/react-alert-dialog": "^1.1.15",
     "@radix-ui/react-avatar": "^1.1.11",
     "@radix-ui/react-dialog": "^1.1.15",
@@ -27,10 +29,12 @@
     "next-themes": "^0.4.6",
     "react": "19.1.0",
     "react-dom": "19.1.0",
+    "react-dropzone": "^14.3.8",
     "react-textarea-autosize": "^8.5.9",
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.3.1",
     "usehooks-ts": "^3.1.1",
+    "zod": "^4.3.5",
     "zustand": "^5.0.9"
   },
   "devDependencies": {
